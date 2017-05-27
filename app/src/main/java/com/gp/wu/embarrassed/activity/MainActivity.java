@@ -14,13 +14,10 @@ public class MainActivity extends BaseActivity{
 
     @Override
     public void initWidget() {
-//        getToolBar().setVisibility(View.GONE);
-        setHeadImg(R.drawable.material_img);
     }
 
     @Override
     public void initEvent() {
-        showLoading();
     }
 
     @Override
@@ -30,11 +27,12 @@ public class MainActivity extends BaseActivity{
 
     @Override
     public int setDrawerView() {
-        return R.layout.drawer_layout;
+        return R.layout.common_drawer_layout;
     }
 
     @Override
-    public boolean isEnableHeadImg() {
-        return true;
+    public int setHeadView() {
+        return 0;
     }
+
 }

@@ -1,7 +1,5 @@
 package com.gp.wu.embarrassed.activity;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -33,8 +30,11 @@ public abstract class BaseActivity extends AppCompatActivity{
     private LinearLayout ll_loading;
     private TextView tv_tip;
 
+    private ViewGroup rl_head;
     private ViewGroup fl_content;
     private ViewGroup fl_drawer;
+
+    private View headView;
 
     private static final int LOADING_SHOW = 1;
     private static final int LOADING_HIDE = 2;
@@ -43,7 +43,6 @@ public abstract class BaseActivity extends AppCompatActivity{
     DrawerLayout dl_main;
 
     private View toolbarView;
-    private ImageView iv_toolbar_head;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,11 +52,12 @@ public abstract class BaseActivity extends AppCompatActivity{
         fl_content = (ViewGroup) findViewById(R.id.fl_content);
         fl_drawer = (ViewGroup) findViewById(R.id.fl_drawer);
         contentView = LayoutInflater.from(this).inflate(setSubView(), fl_content);
-        if(isEnableHeadImg()){
-            toolbarView = LayoutInflater.from(this).inflate(R.layout.collapsing_layout, app_bar_layout);
-            iv_toolbar_head = (ImageView) toolbarView.findViewById(R.id.iv_toolbar_head);
+        if(setHeadView() != 0){
+            toolbarView = LayoutInflater.from(this).inflate(R.layout.common_collapsing_layout, app_bar_layout);
+            rl_head = (ViewGroup) toolbarView .findViewById(R.id.rl_head);
+            headView = LayoutInflater.from(this).inflate(setHeadView(), rl_head);
         }else{
-            toolbarView = LayoutInflater.from(this).inflate(R.layout.toolbar_layout, app_bar_layout);
+            toolbarView = LayoutInflater.from(this).inflate(R.layout.common_toolbar_layout, app_bar_layout);
         }
         toolbar = (Toolbar) toolbarView.findViewById(R.id.id_toolbar);
         setSupportActionBar(toolbar);
@@ -91,22 +91,13 @@ public abstract class BaseActivity extends AppCompatActivity{
     public abstract void initEvent();
     public abstract int setSubView();
     public abstract int setDrawerView();
+    public abstract int setHeadView();
 
-    public abstract boolean isEnableHeadImg();
-    public void setHeadImg(int headImg){
-        if(isEnableHeadImg()){
-            iv_toolbar_head.setImageResource(headImg);
+    public View getHeadView() {
+        if(headView != null){
+            return headView;
         }
-    }
-    public void setHeadImg(Drawable headImg){
-        if(isEnableHeadImg()){
-            iv_toolbar_head.setImageDrawable(headImg);
-        }
-    }
-    public void setHeadImg(Bitmap headImg){
-        if(isEnableHeadImg()){
-            iv_toolbar_head.setImageBitmap(headImg);
-        }
+        return null;
     }
 
     public Toolbar getToolBar(){
@@ -166,4 +157,6 @@ public abstract class BaseActivity extends AppCompatActivity{
             super.onBackPressed();
         }
     }
+
+
 }
