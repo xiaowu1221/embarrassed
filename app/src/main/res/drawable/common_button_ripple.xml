@@ -3,10 +3,7 @@
     android:color="@color/grey_500">
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/grey_50" />
+            <solid android:color="@color/trans_color_grey_800" />
         </shape>
-    </item>
-    <item>
-
     </item>
 </ripple>

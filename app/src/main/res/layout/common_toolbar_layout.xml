@@ -7,7 +7,7 @@
         android:id="@+id/id_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/cyan_500"
         android:fitsSystemWindows="true"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 </merge>

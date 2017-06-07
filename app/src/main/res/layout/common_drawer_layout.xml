@@ -10,19 +10,75 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <RelativeLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:background="@drawable/material_img"
-            android:paddingTop="32dp"
-            android:paddingLeft="16dp">
-            <com.gp.wu.embarrassed.view.CircleImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/material_img"
-                app:border_width="1dp"
-                app:border_overlay="true"/>
-        </RelativeLayout>
+            android:background="@drawable/common_view_bg">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@color/trans_color_grey_800"
+                android:paddingTop="32dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal">
+                    <com.gp.wu.embarrassed.view.CircleImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/ic_default_avatar"
+                        android:layout_marginRight="16dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/grey_50"
+                            android:text=""/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/grey_50"
+                            android:text="" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="点击头像登录"
+                        android:textColor="@color/grey_300"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+                    <ImageView
+                        style="@style/DrawerImageView"
+                        android:src="@drawable/ic_menu_camera"/>
+
+                    <ImageView
+                        style="@style/DrawerImageView"
+                        android:src="@drawable/ic_menu_camera"/>
+
+                    <ImageView
+                        style="@style/DrawerImageView"
+                        android:src="@drawable/ic_menu_camera"/>
+
+                    <ImageView
+                        style="@style/DrawerImageView"
+                        android:src="@drawable/ic_menu_camera"/>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,52 +88,43 @@
             <RadioButton
                 style="@style/DrawerRadioButton"
                 android:drawableLeft="@drawable/ic_menu_hot"
-                android:checked="true"
-                android:text="喵"/>
+                android:text="首页"/>
             <RadioButton
                 style="@style/DrawerRadioButton"
                 android:drawableLeft="@drawable/ic_menu_silk_bag"
-                android:text="喵"/>
+                android:text="更多内容"/>
             <RadioButton
                 style="@style/DrawerRadioButton"
                 android:drawableLeft="@drawable/ic_menu_travel_note"
-                android:text="喵"/>
+                android:text="传说中"/>
             <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey_300"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
+                style="@style/CommonDividerHorizontal"/>
             <RadioButton
                 style="@style/DrawerRadioButton"
                 android:drawableLeft="@drawable/ic_menu_hot"
-                android:text="喵"/>
+                android:text="首页"/>
             <RadioButton
                 style="@style/DrawerRadioButton"
-                android:drawableLeft="@drawable/ic_menu_hot"
-                android:text="喵"/>
+                android:drawableLeft="@drawable/ic_menu_silk_bag"
+                android:text="更多内容"/>
             <RadioButton
                 style="@style/DrawerRadioButton"
-                android:drawableLeft="@drawable/ic_menu_hot"
-                android:text="喵"/>
+                android:drawableLeft="@drawable/ic_menu_travel_note"
+                android:text="传说中"/>
             <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey_300"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
+                style="@style/CommonDividerHorizontal"/>
             <RadioButton
                 style="@style/DrawerRadioButton"
                 android:drawableLeft="@drawable/ic_menu_hot"
-                android:text="喵"/>
+                android:text="首页"/>
             <RadioButton
                 style="@style/DrawerRadioButton"
-                android:drawableLeft="@drawable/ic_menu_hot"
-                android:text="喵"/>
+                android:drawableLeft="@drawable/ic_menu_silk_bag"
+                android:text="更多内容"/>
             <RadioButton
                 style="@style/DrawerRadioButton"
-                android:drawableLeft="@drawable/ic_menu_hot"
-                android:text="喵"/>
+                android:drawableLeft="@drawable/ic_menu_travel_note"
+                android:text="传说中"/>
         </RadioGroup>
 
 
